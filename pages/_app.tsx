@@ -1,8 +1,14 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 
+import { TellusProvider } from '@heytellus/next';
+
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <TellusProvider config={{ token: "wjkurxnvgz" }}>
+      <Component {...pageProps} />
+    </TellusProvider>
+  );
 }
 
 export default MyApp
